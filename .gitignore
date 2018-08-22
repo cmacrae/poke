@@ -1,0 +1,9 @@
+# Binaries
+poke
+poke.linux
+
+# Test data
+*.json
+*.yml
+*.yaml
+gopher.png
