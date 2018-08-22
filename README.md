@@ -1,3 +1,4 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/cmacrae/poke)](https://goreportcard.com/report/github.com/cmacrae/poke) [![license](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](LICENSE)
 # Poke 👉
 A stupid simple notifier built on [Pushover](https://pushover.net/)
 
