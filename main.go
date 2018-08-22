@@ -25,6 +25,12 @@ func readData() (io.Reader, error) {
 	return r, err
 }
 
+func isEmpty(s string, n string) {
+	if s == "" {
+		log.Fatalf("No %v provided!", n)
+	}
+}
+
 func main() {
 	input, err := readData()
 	if err != nil {
@@ -36,17 +42,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if n.Token == "" {
-		log.Fatal("No token provided!")
-	}
-
-	if n.Recipient == "" {
-		log.Fatal("No recipient provided!")
-	}
-
-	if n.Message == "" {
-		log.Fatal("No message provided!")
-	}
+	// Check required parameters
+	isEmpty(n.Token, "token")
+	isEmpty(n.Recipient, "recipient")
+	isEmpty(n.Message, "message")
 
 	if err := n.send(); err != nil {
 		log.Fatalf("There was an issue sending the notification:\n%v", err)
