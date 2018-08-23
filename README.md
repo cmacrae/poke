@@ -61,6 +61,9 @@ $ poke
 ```
 *Note: `^D` here is CTRL+D - to indicate to Poke we're done*
 
+## Examples
+Check out the [examples](examples/) for some simple scripts using Poke!
+
 ## Preview
 Lockscreen                 |  Pushover
 :-------------------------:|:-------------------------:
