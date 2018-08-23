@@ -5,6 +5,7 @@
 package main
 
 import (
+	"flag"
 	"io"
 	"log"
 	"os"
@@ -12,14 +13,25 @@ import (
 	yaml "gopkg.in/yaml.v2"
 )
 
+// Verbose output
+var verbose bool
+
+func init() {
+	flag.BoolVar(&verbose, "v", false, "Print Pushover response stats")
+	flag.Parse()
+}
+
 // Read data from stdin or a file (as argument)
 func readData() (io.Reader, error) {
 	var err error
 	r := os.Stdin
 	if len(os.Args) > 1 {
-		r, err = os.Open(os.Args[1])
-		if err != nil {
-			return r, err
+		lastArg := os.Args[len(os.Args)-1]
+		if _, err := os.Stat(lastArg); err == nil {
+			r, err = os.Open(lastArg)
+			if err != nil {
+				return r, err
+			}
 		}
 	}
 	return r, err

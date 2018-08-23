@@ -61,6 +61,14 @@ $ poke
 ```
 *Note: `^D` here is CTRL+D - to indicate to Poke we're done*
 
+## Verbosity
+If you'd like to print some statistics from Pushover after your notification has been sent, you can use the `-v` flag to get output like the following:
+```
+Request id: zc47c30b-3ff2-8a92-kl89-gg7b1b77z3gt
+Usage 7449/7500 messages
+Next reset : 2018-09-01 06:00:00 +0100 BST
+```
+
 ## Examples
 Check out the [examples](examples/) for some simple scripts using Poke!
 

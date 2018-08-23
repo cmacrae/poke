@@ -53,7 +53,8 @@ func (p pushNotification) send() error {
 	if err != nil {
 		return err
 	}
-	fmt.Printf("Pushover Response:\n%v\n", response)
-
+	if verbose {
+		fmt.Println(response)
+	}
 	return nil
 }
